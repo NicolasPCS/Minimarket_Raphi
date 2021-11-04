@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Subfamilia_ProductoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Subfamilia_Producto">
+    <Key>
+      <PropertyRef Name="ID_HojaRegistro" />
+      <PropertyRef Name="Subfamilia" />
+    </Key>
+    <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Subfamilia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Subfamilia_Producto" EntityType="Self.Subfamilia_Producto" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Minimarket_RaphiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agrega_Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Empleado" />
+            <PropertyRef Name="ID_HojaRegistro" />
+          </Key>
+          <Property Name="Codigo_Empleado" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ID_HojaRegistro" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Codigo_Empleado" />
+          </Key>
+          <Property Name="Codigo_Empleado" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Sueldo" Type="money" Nullable="false" />
+          <Property Name="Nombre_Pila" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Apellido_Paterno" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Apellido_Materno" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hoja_de_Registro">
+          <Key>
+            <PropertyRef Name="ID_HojaRegistro" />
+          </Key>
+          <Property Name="ID_HojaRegistro" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Saldo_Final_Mensual" Type="int" />
+          <Property Name="Codigo_Empleado" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="20" />
+          <Property Name="Turno" Type="varchar" MaxLength="15" />
+          <Property Name="Dia" Type="int" Nullable="false" />
+          <Property Name="Mes" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="ID_Kardex" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kardex">
+          <Key>
+            <PropertyRef Name="ID_Kardex" />
+          </Key>
+          <Property Name="ID_Kardex" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Saldo_Inicial" Type="money" Nullable="false" />
+          <Property Name="Saldo_Final" Type="money" />
+          <Property Name="Monto_Venta" Type="money" Nullable="false" />
+          <Property Name="Codigo_Empleado" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Ganancia" Type="money" />
+          <Property Name="Dia" Type="int" Nullable="false" />
+          <Property Name="Mes" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kardex_SV">
+          <Key>
+            <PropertyRef Name="ID_Kardex" />
+          </Key>
+          <Property Name="ID_Kardex" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Salida_Venta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operaciones_Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+            <PropertyRef Name="ID_Kardex" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ID_Kardex" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Retiro" Type="int" Nullable="false" />
+          <Property Name="Entrada" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Tipo_Producto" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Dia" Type="int" Nullable="false" />
+          <Property Name="Mes" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registra">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+            <PropertyRef Name="Codigo_Empleado" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Codigo_Empleado" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Dia" Type="int" Nullable="false" />
+          <Property Name="Mes" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registro_Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+            <PropertyRef Name="ID_HojaRegistro" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ID_HojaRegistro" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subfamilia_Producto">
+          <Key>
+            <PropertyRef Name="ID_HojaRegistro" />
+            <PropertyRef Name="Subfamilia" />
+          </Key>
+          <Property Name="ID_HojaRegistro" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Subfamilia" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="Hora" />
+          </Key>
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Hoja_de_R__ID_Ka__403A8C7D">
+          <End Role="Kardex" Type="Self.Kardex" Multiplicity="1" />
+          <End Role="Hoja_de_Registro" Type="Self.Hoja_de_Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kardex">
+              <PropertyRef Name="ID_Kardex" />
+            </Principal>
+            <Dependent Role="Hoja_de_Registro">
+              <PropertyRef Name="ID_Kardex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Minimarket_RaphiModelStoreContainer">
+          <EntitySet Name="Agrega_Producto" EntityType="Self.Agrega_Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hoja_de_Registro" EntityType="Self.Hoja_de_Registro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kardex" EntityType="Self.Kardex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kardex_SV" EntityType="Self.Kardex_SV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operaciones_Producto" EntityType="Self.Operaciones_Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registra" EntityType="Self.Registra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registro_Producto" EntityType="Self.Registro_Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subfamilia_Producto" EntityType="Self.Subfamilia_Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Hoja_de_R__ID_Ka__403A8C7D" Association="Self.FK__Hoja_de_R__ID_Ka__403A8C7D">
+            <End Role="Kardex" EntitySet="Kardex" />
+            <End Role="Hoja_de_Registro" EntitySet="Hoja_de_Registro" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Minimarket_RaphiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agrega_Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Empleado" />
+            <PropertyRef Name="ID_HojaRegistro" />
+          </Key>
+          <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Codigo_Empleado" />
+          </Key>
+          <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Sueldo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Nombre_Pila" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido_Paterno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido_Materno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hoja_de_Registro">
+          <Key>
+            <PropertyRef Name="ID_HojaRegistro" />
+          </Key>
+          <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Saldo_Final_Mensual" Type="Int32" />
+          <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Turno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Dia" Type="Int32" Nullable="false" />
+          <Property Name="Mes" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kardex" Relationship="Self.FK__Hoja_de_R__ID_Ka__403A8C7D" FromRole="Hoja_de_Registro" ToRole="Kardex" />
+        </EntityType>
+        <EntityType Name="Kardex">
+          <Key>
+            <PropertyRef Name="ID_Kardex" />
+          </Key>
+          <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Saldo_Inicial" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Saldo_Final" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Monto_Venta" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Ganancia" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Dia" Type="Int32" Nullable="false" />
+          <Property Name="Mes" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_Registro" Relationship="Self.FK__Hoja_de_R__ID_Ka__403A8C7D" FromRole="Kardex" ToRole="Hoja_de_Registro" />
+        </EntityType>
+        <EntityType Name="Kardex_SV">
+          <Key>
+            <PropertyRef Name="ID_Kardex" />
+          </Key>
+          <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Salida_Venta" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operaciones_Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+            <PropertyRef Name="ID_Kardex" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Retiro" Type="Int32" Nullable="false" />
+          <Property Name="Entrada" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Categoria" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo_Producto" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Dia" Type="Int32" Nullable="false" />
+          <Property Name="Mes" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registra">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+            <PropertyRef Name="Codigo_Empleado" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Dia" Type="Int32" Nullable="false" />
+          <Property Name="Mes" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registro_Producto">
+          <Key>
+            <PropertyRef Name="Codigo_Producto" />
+            <PropertyRef Name="ID_HojaRegistro" />
+          </Key>
+          <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subfamilia_Producto">
+          <Key>
+            <PropertyRef Name="ID_HojaRegistro" />
+            <PropertyRef Name="Subfamilia" />
+          </Key>
+          <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Subfamilia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="Hora" />
+          </Key>
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Hoja_de_R__ID_Ka__403A8C7D">
+          <End Role="Kardex" Type="Self.Kardex" Multiplicity="1" />
+          <End Role="Hoja_de_Registro" Type="Self.Hoja_de_Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kardex">
+              <PropertyRef Name="ID_Kardex" />
+            </Principal>
+            <Dependent Role="Hoja_de_Registro">
+              <PropertyRef Name="ID_Kardex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Minimarket_RaphiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agrega_Producto" EntityType="Self.Agrega_Producto" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="Hoja_de_Registro" EntityType="Self.Hoja_de_Registro" />
+          <EntitySet Name="Kardex" EntityType="Self.Kardex" />
+          <EntitySet Name="Kardex_SV" EntityType="Self.Kardex_SV" />
+          <EntitySet Name="Operaciones_Producto" EntityType="Self.Operaciones_Producto" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="Registra" EntityType="Self.Registra" />
+          <EntitySet Name="Registro_Producto" EntityType="Self.Registro_Producto" />
+          <EntitySet Name="Subfamilia_Producto" EntityType="Self.Subfamilia_Producto" />
+          <EntitySet Name="Turno" EntityType="Self.Turno" />
+          <AssociationSet Name="FK__Hoja_de_R__ID_Ka__403A8C7D" Association="Self.FK__Hoja_de_R__ID_Ka__403A8C7D">
+            <End Role="Kardex" EntitySet="Kardex" />
+            <End Role="Hoja_de_Registro" EntitySet="Hoja_de_Registro" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Minimarket_RaphiModelStoreContainer" CdmEntityContainer="Minimarket_RaphiEntities">
+          <EntitySetMapping Name="Agrega_Producto">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Agrega_Producto">
+              <MappingFragment StoreEntitySet="Agrega_Producto">
+                <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+                <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+                <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+                <ScalarProperty Name="Nombre_Pila" ColumnName="Nombre_Pila" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoja_de_Registro">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Hoja_de_Registro">
+              <MappingFragment StoreEntitySet="Hoja_de_Registro">
+                <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+                <ScalarProperty Name="Saldo_Final_Mensual" ColumnName="Saldo_Final_Mensual" />
+                <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kardex">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Kardex">
+              <MappingFragment StoreEntitySet="Kardex">
+                <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+                <ScalarProperty Name="Saldo_Inicial" ColumnName="Saldo_Inicial" />
+                <ScalarProperty Name="Saldo_Final" ColumnName="Saldo_Final" />
+                <ScalarProperty Name="Monto_Venta" ColumnName="Monto_Venta" />
+                <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+                <ScalarProperty Name="Ganancia" ColumnName="Ganancia" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kardex_SV">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Kardex_SV">
+              <MappingFragment StoreEntitySet="Kardex_SV">
+                <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+                <ScalarProperty Name="Salida_Venta" ColumnName="Salida_Venta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operaciones_Producto">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Operaciones_Producto">
+              <MappingFragment StoreEntitySet="Operaciones_Producto">
+                <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+                <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+                <ScalarProperty Name="Retiro" ColumnName="Retiro" />
+                <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Tipo_Producto" ColumnName="Tipo_Producto" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registra">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Registra">
+              <MappingFragment StoreEntitySet="Registra">
+                <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+                <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registro_Producto">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Registro_Producto">
+              <MappingFragment StoreEntitySet="Registro_Producto">
+                <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+                <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subfamilia_Producto">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Subfamilia_Producto">
+              <MappingFragment StoreEntitySet="Subfamilia_Producto">
+                <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+                <ScalarProperty Name="Subfamilia" ColumnName="Subfamilia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turno">
+            <EntityTypeMapping TypeName="Minimarket_RaphiModel.Turno">
+              <MappingFragment StoreEntitySet="Turno">
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

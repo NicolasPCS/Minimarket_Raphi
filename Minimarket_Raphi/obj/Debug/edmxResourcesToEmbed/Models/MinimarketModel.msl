@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Minimarket_RaphiModelStoreContainer" CdmEntityContainer="Minimarket_RaphiEntities">
+    <EntitySetMapping Name="Agrega_Producto">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Agrega_Producto">
+        <MappingFragment StoreEntitySet="Agrega_Producto">
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+          <ScalarProperty Name="Nombre_Pila" ColumnName="Nombre_Pila" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoja_de_Registro">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Hoja_de_Registro">
+        <MappingFragment StoreEntitySet="Hoja_de_Registro">
+          <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+          <ScalarProperty Name="Saldo_Final_Mensual" ColumnName="Saldo_Final_Mensual" />
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+          <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kardex">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Kardex">
+        <MappingFragment StoreEntitySet="Kardex">
+          <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+          <ScalarProperty Name="Saldo_Inicial" ColumnName="Saldo_Inicial" />
+          <ScalarProperty Name="Saldo_Final" ColumnName="Saldo_Final" />
+          <ScalarProperty Name="Monto_Venta" ColumnName="Monto_Venta" />
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="Ganancia" ColumnName="Ganancia" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kardex_SV">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Kardex_SV">
+        <MappingFragment StoreEntitySet="Kardex_SV">
+          <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+          <ScalarProperty Name="Salida_Venta" ColumnName="Salida_Venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operaciones_Producto">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Operaciones_Producto">
+        <MappingFragment StoreEntitySet="Operaciones_Producto">
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+          <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+          <ScalarProperty Name="Retiro" ColumnName="Retiro" />
+          <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Tipo_Producto" ColumnName="Tipo_Producto" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registra">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Registra">
+        <MappingFragment StoreEntitySet="Registra">
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registro_Producto">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Registro_Producto">
+        <MappingFragment StoreEntitySet="Registro_Producto">
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+          <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subfamilia_Producto">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Subfamilia_Producto">
+        <MappingFragment StoreEntitySet="Subfamilia_Producto">
+          <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+          <ScalarProperty Name="Subfamilia" ColumnName="Subfamilia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turno">
+      <EntityTypeMapping TypeName="Minimarket_RaphiModel.Turno">
+        <MappingFragment StoreEntitySet="Turno">
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

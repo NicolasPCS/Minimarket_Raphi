@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Registro_ProductoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Registro_Producto">
+    <Key>
+      <PropertyRef Name="Codigo_Producto" />
+      <PropertyRef Name="ID_HojaRegistro" />
+    </Key>
+    <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Registro_Producto" EntityType="Self.Registro_Producto" />
+  </EntityContainer>
+</Schema>
