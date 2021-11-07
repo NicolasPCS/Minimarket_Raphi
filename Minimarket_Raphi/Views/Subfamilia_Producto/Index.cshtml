@@ -7,12 +7,12 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Agregar Nuevo", "Create")
+    @Html.ActionLink("Agregar Nuevo", "Create", "Crear")
 </p>
 <table class="table table-bordered">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ID_HojaRegistro)
+            @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Subfamilia)
@@ -24,15 +24,15 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ID_HojaRegistro)
+                @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Subfamilia)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Subfamilia }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Subfamilia }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Subfamilia })
+                @Html.ActionLink("Edit", "Editar", new { id = item.Subfamilia }) |
+                @Html.ActionLink("Details", "Detalle", new { id = item.Subfamilia }) |
+                @Html.ActionLink("Delete", "Eliminar", new { id = item.Subfamilia })
             </td>
         </tr>
     }

@@ -333,6 +333,10 @@
     <Content Include="Views\Subfamilia_Producto\Detalle.cshtml" />
     <Content Include="Views\Subfamilia_Producto\Editar.cshtml" />
     <Content Include="Views\Subfamilia_Producto\Index.cshtml" />
+    <Content Include="Views\Empleado\Eliminar.cshtml" />
+    <Content Include="Views\Producto\Eliminar.cshtml" />
+    <Content Include="Views\Registro_Producto\Eliminar.cshtml" />
+    <Content Include="Views\Subfamilia_Producto\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

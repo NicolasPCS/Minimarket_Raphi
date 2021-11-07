@@ -32,6 +32,29 @@ namespace Minimarket_Raphi.Controllers
         {
             return View(admin.Consultar(id));
         }
+
+        // Se agrego solo el siguiente fragmento de codigo
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(String id, Empleado datosUpdate)
+        {
+            try
+            {
+                admin.Consultar(id);
+
+                if(admin != null)
+                {
+                    admin.Modificar(datosUpdate);
+                }
+
+                return RedirectToAction(nameof(Index));
+            } catch
+            {
+                return View();
+            }
+        }
+        // Hasta aqui
+
         public ActionResult Modificar(Empleado modelo)
         {
             admin.Modificar(modelo); return View("Editar", modelo);
