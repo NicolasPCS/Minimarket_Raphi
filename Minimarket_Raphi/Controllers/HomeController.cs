@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace Minimarket_Raphi.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -16,14 +15,14 @@ namespace Minimarket_Raphi.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Nosotros somos el minimarket Raphi.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Puedes contactarnos desde el siguiente formulario.";
 
             return View();
         }

@@ -124,3 +124,4 @@ C:\Users\Usuario\Documents\MR\Minimarket_Raphi\Minimarket_Raphi\obj\Debug\Minima
 C:\Users\Usuario\Documents\MR\Minimarket_Raphi\Minimarket_Raphi\obj\Debug\Minimarket_Raphi.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\MR\Minimarket_Raphi\Minimarket_Raphi\obj\Debug\Minimarket_Raphi.dll
 C:\Users\Usuario\Documents\MR\Minimarket_Raphi\Minimarket_Raphi\obj\Debug\Minimarket_Raphi.pdb
+C:\Users\Usuario\Documents\MR\Minimarket_Raphi\Minimarket_Raphi\obj\Debug\Minimarket_Raphi.csproj.CopyComplete
