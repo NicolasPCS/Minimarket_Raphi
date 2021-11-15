@@ -171,12 +171,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\HojaRegistroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KardexController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\Registro_ProductoController.cs" />
     <Compile Include="Controllers\Subfamilia_ProductoController.cs" />
     <Compile Include="Datos\EmpleadoAdmin.cs" />
+    <Compile Include="Datos\HojaRegistroAdmin.cs" />
+    <Compile Include="Datos\KardexAdmin.cs" />
     <Compile Include="Datos\ProductoAdmin.cs" />
     <Compile Include="Datos\Registro_ProductoAdmin.cs" />
     <Compile Include="Datos\Subfamilia_ProductoAdmin.cs" />
@@ -470,6 +474,16 @@
     <Content Include="Views\Producto\Eliminar.cshtml" />
     <Content Include="Views\Registro_Producto\Eliminar.cshtml" />
     <Content Include="Views\Subfamilia_Producto\Eliminar.cshtml" />
+    <Content Include="Views\HojaRegistro\Crear.cshtml" />
+    <Content Include="Views\HojaRegistro\Detalle.cshtml" />
+    <Content Include="Views\HojaRegistro\Editar.cshtml" />
+    <Content Include="Views\HojaRegistro\Eliminar.cshtml" />
+    <Content Include="Views\HojaRegistro\Index.cshtml" />
+    <Content Include="Views\Kardex\Crear.cshtml" />
+    <Content Include="Views\Kardex\Detalle.cshtml" />
+    <Content Include="Views\Kardex\Editar.cshtml" />
+    <Content Include="Views\Kardex\Eliminar.cshtml" />
+    <Content Include="Views\Kardex\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

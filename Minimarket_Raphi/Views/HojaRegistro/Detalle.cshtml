@@ -1,0 +1,82 @@
+﻿@model Minimarket_Raphi.Models.Hoja_de_Registro
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Hoja_de_Registro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Saldo_Final_Mensual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saldo_Final_Mensual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo_Empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo_Empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Turno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Turno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kardex.Codigo_Empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kardex.Codigo_Empleado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_HojaRegistro }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

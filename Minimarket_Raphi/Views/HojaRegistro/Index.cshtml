@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Minimarket_Raphi.Models.Hoja_de_Registro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nuevo", "Create", "Crear")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_HojaRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saldo_Final_Mensual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo_Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Kardex)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_HojaRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saldo_Final_Mensual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Turno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Kardex)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Editar", new { id = item.ID_HojaRegistro }) |
+            @Html.ActionLink("Details", "Detalle", new { id = item.ID_HojaRegistro }) |
+            @Html.ActionLink("Delete", "Eliminar", new { id = item.ID_HojaRegistro })
+        </td>
+    </tr>
+    }
+</table>
