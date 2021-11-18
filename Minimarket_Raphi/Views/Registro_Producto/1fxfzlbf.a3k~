@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Minimarket_Raphi.Models.Registro_Producto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Registro de productos";
 }
 
 <h2>Index</h2>

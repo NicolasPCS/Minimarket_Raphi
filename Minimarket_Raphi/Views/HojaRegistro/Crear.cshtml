@@ -7,7 +7,7 @@
 <h2>Crear</h2>
 
 
-@using (Html.BeginForm("Guardar", "Customer", FormMethod.Post, new
+@using (Html.BeginForm("Guardar", "Hoja_de_Registro", FormMethod.Post, new
 {
     @class = "form-horizontal",
     role = "form"
@@ -84,13 +84,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.ID_Kardex, "ID_Kardex", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ID_Kardex", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ID_Kardex, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

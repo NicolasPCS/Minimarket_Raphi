@@ -10,9 +10,24 @@
     <h4>Subfamilia_Producto</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_SubfamiliaProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subfamilia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subfamilia)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_SubfamiliaProducto }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

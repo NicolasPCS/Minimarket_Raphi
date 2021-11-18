@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Minimarket_Raphi.Models.Kardex>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Kardex";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Agregar Nuevo", "Create", "Crear")
+    @Html.ActionLink("Agregar Nuevo", "Create", "Kardex/Crear")
 </p>
 <table class="table table-bordered">
     <tr>
@@ -43,39 +43,39 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_Kardex)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Saldo_Inicial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Saldo_Final)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Monto_Venta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Codigo_Empleado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ganancia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Anio)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Editar", new { id = item.Codigo_Empleado }) |
-            @Html.ActionLink("Details", "Detalle", new { id = item.Codigo_Empleado }) |
-            @Html.ActionLink("Delete", "Eliminar", new { id = item.Codigo_Empleado })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_Kardex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saldo_Inicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saldo_Final)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto_Venta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ganancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anio)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Editar", new { id = item.Codigo_Empleado }) |
+                @Html.ActionLink("Details", "Detalle", new { id = item.Codigo_Empleado }) |
+                @Html.ActionLink("Delete", "Eliminar", new { id = item.Codigo_Empleado })
+            </td>
+        </tr>
     }
 </table>
