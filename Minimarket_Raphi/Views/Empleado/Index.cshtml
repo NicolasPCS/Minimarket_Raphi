@@ -4,48 +4,47 @@
     ViewBag.Title = "Administración de Empleado";
 }
 
-<h2>Index</h2>
+<div class="jumbotron">
+    <h2>Tabla Empleado</h2>
+    @Html.ActionLink("NuevoEmpleado", "NuevoEmpleado", "Empleado", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("ActualizarEmpleado", "ActualizarEmpleado", "Empleado", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("EliminarEmpleado", "EliminarEmpleado", "Empleado", null, new { @class = "btn btn-primary btn-lg" })
 
-<p>
-    @Html.ActionLink("Agregar Nuevo", "Create", "Empleado/Crear")
-</p>
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Codigo_Empleado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sueldo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre_Pila)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido_Paterno)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
+    <table class="table table-bordered">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo_Empleado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sueldo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre_Pila)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido_Paterno)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Editar", new { id = item.Codigo_Empleado }) |
-                @Html.ActionLink("Details", "Detalle", new { id = item.Codigo_Empleado }) |
-                @Html.ActionLink("Delete", "Eliminar", new { id = item.Codigo_Empleado })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo_Empleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sueldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Pila)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            </th>
+            <th></th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sueldo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Pila)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

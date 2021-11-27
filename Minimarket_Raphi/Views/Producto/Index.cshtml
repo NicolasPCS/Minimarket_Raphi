@@ -3,61 +3,58 @@
 @{
     ViewBag.Title = "Administración de Productos";
 }
+<div class="jumbotron">
+    <h2>Tabla Producto</h2>
+    @Html.ActionLink("NuevoProducto", "NuevoProducto", "Producto", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("ActualizarProducto", "ActualizarProducto", "Producto", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("EliminarProducto", "EliminarProducto", "Producto", null, new { @class = "btn btn-primary btn-lg" })
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Agregar Nuevo", "Create", "Producto/Crear")
-</p>
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Codigo_Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <table class="table table-bordered">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo_Producto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Editar", new { id = item.Codigo_Producto }) |
-                @Html.ActionLink("Details", "Detalle", new { id = item.Codigo_Producto }) |
-                @Html.ActionLink("Delete", "Eliminar", new { id = item.Codigo_Producto })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo_Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th></th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,120 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Hoja_de_Registro>
+@{
+    ViewBag.Title = "ActualizarHoja_de_Registro";
+}
+<div class="jumbotron">
+    <h2>Actualizar Hoja de Registro</h2>
+    @using (Html.BeginForm("ActualizarHoja_de_Registro", "Home", FormMethod.Post))
+    {
+
+        <style>
+            div {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+            }
+        </style>
+        @Html.Label("Ingrese ID Kardex:")
+        @Html.TextBox("ID_Kardex")
+        <br>
+        @Html.Label("Ingrese Código Empleado:")
+        @Html.TextBox("Codigo_Empleado")
+        <br>
+        @Html.Label("Ingrese ID HojaRegistro:")
+        @Html.TextBox("ID_HojaRegistro")
+        <br>
+        @Html.Label("Ingrese Saldo Final Mensual:")
+        @Html.TextBox("Saldo_Final_Mensual")
+        <br>
+        @Html.Label("Ingrese Área:")
+        @Html.TextBox("Area")
+        <br>
+        @Html.Label("Ingrese Turno:")
+        @Html.TextBox("Turno")
+        <br>
+        @Html.Label("Ingrese Día")
+        @Html.TextBox("Dia")
+        <br>
+        @Html.Label("Ingrese Mes:")
+        @Html.TextBox("Mes")
+        <br>
+        @Html.Label("Ingrese Año:")
+        @Html.TextBox("Anio")
+        <br>
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_HojaRegistro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Saldo_Final_Mensual)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Area)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Turno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Anio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_Kardex)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_HojaRegistro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Saldo_Final_Mensual)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Turno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Anio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_Kardex)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    }
+</div>

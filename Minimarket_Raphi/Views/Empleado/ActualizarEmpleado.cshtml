@@ -1,0 +1,84 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Empleado>
+@{
+    ViewBag.Title = "Actualizar Empleado";
+}
+<div class="jumbotron">
+    <h2>Actualizar Empleado</h2>
+    @using (Html.BeginForm("ActualizarEmpleado", "Home", FormMethod.Post))
+    {
+        <style>
+            div {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+            }
+        </style>
+        @Html.Label("Ingrese código:")
+        @Html.TextBox("Codigo_Empleado")
+        <br>
+        @Html.Label("Ingrese Nombre:")
+        @Html.TextBox("Nombre_Pila")
+        <br>
+        @Html.Label("Ingrese Apellido Paterno:")
+        @Html.TextBox("Apellido_Paterno")
+        <br>
+        @Html.Label("Ingrese Apellido Materno:")
+        @Html.TextBox("Apellido_Materno")
+        <br>
+        @Html.Label("Ingrese Sueldo:")
+        @Html.TextBox("Sueldo")
+        <br>
+        @Html.Label("Fecha de Modificación")
+        @Html.TextBox("Fecha_Modificacion")
+        <br>
+        @Html.Label("Acción Ejecutada:")
+        @Html.TextBox("Accion_Ejecutada")
+        <br>
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sueldo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre_Pila)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido_Paterno)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sueldo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Pila)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+    }
+</div>

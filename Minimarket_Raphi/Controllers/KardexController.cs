@@ -66,5 +66,78 @@ namespace Minimarket_Raphi.Controllers
             admin.Eliminar(modelo);
             return View("Index", admin.Consultar());
         }
+
+
+
+
+
+
+
+
+
+
+        public ActionResult NuevoKardex(string ID_Kardex, Nullable<decimal> Saldo_Inicial, Nullable<decimal> Saldo_Final, Nullable<decimal> Monto_Venta, string Codigo_Empleado, Nullable<decimal> Ganancia, Nullable<int> Dia, Nullable<int> Mes, Nullable<int> Anio)
+        {
+            if (Codigo_Empleado == null)
+            {
+                return View();
+            }
+            else
+            {
+                Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                Nuevo.sp_nuevo_kardex(ID_Kardex, Saldo_Inicial, Saldo_Final, Monto_Venta, Codigo_Empleado, Ganancia, Dia, Mes, Anio);
+                Nuevo.SaveChanges();
+                return View();
+            }
+        }
+        public ActionResult ActualizarKardex(string ID_Kardex, Nullable<decimal> Saldo_Inicial, Nullable<decimal> Saldo_Final, Nullable<decimal> Monto_Venta, string Codigo_Empleado, Nullable<decimal> Ganancia, Nullable<int> Dia, Nullable<int> Mes, Nullable<int> Anio)
+        {
+            if (Codigo_Empleado == null)
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    return View(contexto.Kardex.AsNoTracking().ToList());
+                }
+            }
+            else
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                    Nuevo.sp_actualizar_kardex(ID_Kardex, Saldo_Inicial, Saldo_Final, Monto_Venta, Codigo_Empleado, Ganancia, Dia, Mes, Anio);
+                    Nuevo.SaveChanges();
+                    return View(contexto.Kardex.AsNoTracking().ToList());
+                }
+            }
+
+        }
+        public ActionResult EliminarKardex(string Codigo_Kardex)
+        {
+            if (Codigo_Kardex == null)
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    return View(contexto.Kardex.AsNoTracking().ToList());
+                }
+            }
+            else
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+
+                    Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                    Nuevo.sp_eliminar_kardex(Codigo_Kardex);
+                    Nuevo.SaveChanges();
+                    return View(contexto.Kardex.AsNoTracking().ToList());
+                }
+            }
+        }
+
+
+
+
+
+
+
     }
 }

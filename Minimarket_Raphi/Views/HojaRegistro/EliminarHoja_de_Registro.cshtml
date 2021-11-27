@@ -1,0 +1,82 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Hoja_de_Registro>
+@{
+    ViewBag.Title = "EliminarHoja_de_Registro";
+}
+<div class="jumbotron">
+    <h2>Eliminar Hoja de Registro</h2>
+    @using (Html.BeginForm("EliminarHoja_de_Registro", "Home", FormMethod.Post))
+    {
+        @Html.Label("Ingrese el código de la hoja de registro para borrar:")
+        @Html.TextBox("Codigo_Hoja_de_Registro")
+        <br>
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_HojaRegistro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Saldo_Final_Mensual)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Area)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Turno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Anio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_Kardex)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_HojaRegistro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Saldo_Final_Mensual)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Turno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Anio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_Kardex)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>

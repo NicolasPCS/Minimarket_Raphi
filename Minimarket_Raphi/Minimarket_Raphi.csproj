@@ -175,6 +175,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KardexController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ConsultaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\Registro_ProductoController.cs" />
     <Compile Include="Controllers\Subfamilia_ProductoController.cs" />
@@ -191,16 +192,43 @@
     <Compile Include="Models\Agrega_Producto.cs">
       <DependentUpon>MinimarketModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Consulta_Control_empleados_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consulta_Empleado_Sueldo_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consulta_Ganancia_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\consulta_monto_de_venta_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consulta_Retiro_y_Entradas_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\consulta_saldos_inciales_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consulta_Saldo_Inicial_Año_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consulta_Turno_Empleados_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Empleado.cs">
       <DependentUpon>MinimarketModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HistoricoProducto.cs">
+    <Compile Include="Models\Empleado_en_Hoja_de_Registro_Result.cs">
       <DependentUpon>MinimarketModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Hoja_de_Registro.cs">
       <DependentUpon>MinimarketModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\informacion_empleado_Result.cs">
+      <DependentUpon>MinimarketModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Kardex.cs">
       <DependentUpon>MinimarketModel.tt</DependentUpon>
     </Compile>
@@ -250,14 +278,19 @@
       <DependentUpon>aspnet-Minimarket_Raphi-20211107034300.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Images\grifo.jpg" />
+    <Content Include="Content\IMGBGRD.jpg" />
     <Content Include="Images\minimarket.jpg" />
     <Content Include="Images\restaurante.jpg" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
@@ -484,6 +517,29 @@
     <Content Include="Views\Kardex\Editar.cshtml" />
     <Content Include="Views\Kardex\Eliminar.cshtml" />
     <Content Include="Views\Kardex\Index.cshtml" />
+    <Content Include="Views\Consulta\Index.cshtml" />
+    <Content Include="Views\Consulta\Montoventa1.cshtml" />
+    <Content Include="Views\Consulta\SaldoInicial2.cshtml" />
+    <Content Include="Views\Consulta\InformacionEmpleado3.cshtml" />
+    <Content Include="Views\Consulta\EmpleadoHojadeRegistro4.cshtml" />
+    <Content Include="Views\Consulta\RetiroyEntradas5.cshtml" />
+    <Content Include="Views\Consulta\TurnoEmpleado6.cshtml" />
+    <Content Include="Views\Consulta\SaldoInicialAño7.cshtml" />
+    <Content Include="Views\Consulta\ConsultaEmpleado8.cshtml" />
+    <Content Include="Views\Consulta\ConsultaGanancia9.cshtml" />
+    <Content Include="Views\Consulta\ConsultaEmpleadoSueldo10.cshtml" />
+    <Content Include="Views\Producto\NuevoProducto.cshtml" />
+    <Content Include="Views\Producto\ActualizarProducto.cshtml" />
+    <Content Include="Views\Producto\EliminarProducto.cshtml" />
+    <Content Include="Views\Empleado\NuevoEmpleado.cshtml" />
+    <Content Include="Views\Empleado\ActualizarEmpleado.cshtml" />
+    <Content Include="Views\Empleado\EliminarEmpleado.cshtml" />
+    <Content Include="Views\Kardex\NuevoKardex.cshtml" />
+    <Content Include="Views\Kardex\ActualizarKardex.cshtml" />
+    <Content Include="Views\Kardex\EliminarKardex.cshtml" />
+    <Content Include="Views\HojaRegistro\NuevaHoja_de_Registro.cshtml" />
+    <Content Include="Views\HojaRegistro\ActualizarHoja_de_Registro.cshtml" />
+    <Content Include="Views\HojaRegistro\EliminarHoja_de_Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -493,15 +549,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\App_LocalResources\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

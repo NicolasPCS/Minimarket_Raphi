@@ -1,0 +1,105 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Producto>
+@{
+    ViewBag.Title = "ActualizarProducto";
+}
+<div class="jumbotron">
+    <h2>Actualizar un Producto</h2>
+    @using (Html.BeginForm("ActualizarProducto", "Home", FormMethod.Post))
+    {
+        <style>
+            div {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+            }
+        </style>
+
+        @Html.Label("Ingrese código:")
+        @Html.TextBox("Codigo")
+        <br>
+        @Html.Label("Ingrese nombre:")
+        @Html.TextBox("Nombre")
+        <br>
+        @Html.Label("Ingrese descripción:")
+        @Html.TextBox("Descripcion")
+        <br>
+        @Html.Label("Ingrese categoría:")
+        @Html.TextBox("Categoria")
+        <br>
+        @Html.Label("Ingrese subfamilia:")
+        @Html.TextBox("Subfamilia")
+        <br>
+        @Html.Label("Ingrese precio:")
+        @Html.TextBox("Precio")
+        <br>
+        <h6>Ingrese fecha de vencimiento:</h6>
+        @Html.Label("Ingrese día:")
+        @Html.TextBox("Dia")
+        <br>
+        @Html.Label("Ingrese mes:")
+        @Html.TextBox("Mes")
+        <br>
+        @Html.Label("Ingrese año:")
+        @Html.TextBox("Anio")
+
+        <br>
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Producto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Producto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+
+
+    }
+</div>

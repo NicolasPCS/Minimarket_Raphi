@@ -6,7 +6,7 @@
       <PropertyRef Name="ID_HojaRegistro" />
     </Key>
     <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_HojaRegistro" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="Empleado">
     <Key>
@@ -20,23 +20,11 @@
     <Property Name="Fecha_Modificacion" Type="DateTime" Precision="0" />
     <Property Name="Accion_Ejecutada" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="HistoricoProducto">
-    <Key>
-      <PropertyRef Name="ID_Historico" />
-    </Key>
-    <Property Name="ID_Historico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="Nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Categoria" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <Property Name="Fecha_Eliminacion" Type="DateTime" Nullable="false" Precision="0" />
-  </EntityType>
   <EntityType Name="Hoja_de_Registro">
     <Key>
       <PropertyRef Name="ID_HojaRegistro" />
     </Key>
-    <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_HojaRegistro" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Saldo_Final_Mensual" Type="Int32" />
     <Property Name="Codigo_Empleado" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Area" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -44,14 +32,14 @@
     <Property Name="Dia" Type="Int32" Nullable="false" />
     <Property Name="Mes" Type="Int32" Nullable="false" />
     <Property Name="Anio" Type="Int32" Nullable="false" />
-    <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_Kardex" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Kardex" Relationship="Self.FK__Hoja_de_R__ID_Ka__403A8C7D" FromRole="Hoja_de_Registro" ToRole="Kardex" />
   </EntityType>
   <EntityType Name="Kardex">
     <Key>
       <PropertyRef Name="ID_Kardex" />
     </Key>
-    <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_Kardex" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Saldo_Inicial" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="Saldo_Final" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Monto_Venta" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
@@ -66,7 +54,7 @@
     <Key>
       <PropertyRef Name="ID_Kardex" />
     </Key>
-    <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_Kardex" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Salida_Venta" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Operaciones_Producto">
@@ -75,7 +63,7 @@
       <PropertyRef Name="ID_Kardex" />
     </Key>
     <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="ID_Kardex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_Kardex" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Retiro" Type="Int32" Nullable="false" />
     <Property Name="Entrada" Type="Int32" Nullable="false" />
   </EntityType>
@@ -87,7 +75,7 @@
     <Property Name="Nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Categoria" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ID_SubfamiliaProducto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_SubfamiliaProducto" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Dia" Type="Int32" Nullable="false" />
     <Property Name="Mes" Type="Int32" Nullable="false" />
     <Property Name="Anio" Type="Int32" Nullable="false" />
@@ -110,14 +98,14 @@
       <PropertyRef Name="ID_HojaRegistro" />
     </Key>
     <Property Name="Codigo_Producto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="ID_HojaRegistro" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_HojaRegistro" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="Subfamilia_Producto">
     <Key>
       <PropertyRef Name="ID_SubfamiliaProducto" />
       <PropertyRef Name="Subfamilia" />
     </Key>
-    <Property Name="ID_SubfamiliaProducto" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_SubfamiliaProducto" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Subfamilia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="Turno">
@@ -142,7 +130,6 @@
   <EntityContainer Name="Minimarket_RaphiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Agrega_Producto" EntityType="Self.Agrega_Producto" />
     <EntitySet Name="Empleado" EntityType="Self.Empleado" />
-    <EntitySet Name="HistoricoProducto" EntityType="Self.HistoricoProducto" />
     <EntitySet Name="Hoja_de_Registro" EntityType="Self.Hoja_de_Registro" />
     <EntitySet Name="Kardex" EntityType="Self.Kardex" />
     <EntitySet Name="Kardex_SV" EntityType="Self.Kardex_SV" />
@@ -156,5 +143,180 @@
       <End Role="Kardex" EntitySet="Kardex" />
       <End Role="Hoja_de_Registro" EntitySet="Hoja_de_Registro" />
     </AssociationSet>
+    <FunctionImport Name="Consulta_Control_empleados" ReturnType="Collection(Minimarket_RaphiModel.Consulta_Control_empleados_Result)" />
+    <FunctionImport Name="Consulta_Empleado_Sueldo" ReturnType="Collection(Minimarket_RaphiModel.Consulta_Empleado_Sueldo_Result)" />
+    <FunctionImport Name="Consulta_Ganancia" ReturnType="Collection(Minimarket_RaphiModel.Consulta_Ganancia_Result)" />
+    <FunctionImport Name="consulta_monto_de_venta" ReturnType="Collection(Minimarket_RaphiModel.consulta_monto_de_venta_Result)" />
+    <FunctionImport Name="Consulta_Retiro_y_Entradas" ReturnType="Collection(Minimarket_RaphiModel.Consulta_Retiro_y_Entradas_Result)" />
+    <FunctionImport Name="Consulta_Saldo_Inicial_Año" ReturnType="Collection(Minimarket_RaphiModel.Consulta_Saldo_Inicial_Año_Result)" />
+    <FunctionImport Name="consulta_saldos_inciales" ReturnType="Collection(Minimarket_RaphiModel.consulta_saldos_inciales_Result)" />
+    <FunctionImport Name="Consulta_Turno_Empleados" ReturnType="Collection(Minimarket_RaphiModel.Consulta_Turno_Empleados_Result)" />
+    <FunctionImport Name="Empleado_en_Hoja_de_Registro" ReturnType="Collection(Minimarket_RaphiModel.Empleado_en_Hoja_de_Registro_Result)" />
+    <FunctionImport Name="informacion_empleado" ReturnType="Collection(Minimarket_RaphiModel.informacion_empleado_Result)" />
+    <FunctionImport Name="sp_actualizar_empleado">
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+      <Parameter Name="xSueldo" Mode="In" Type="Decimal" />
+      <Parameter Name="xNombre_Pila" Mode="In" Type="String" />
+      <Parameter Name="xApellido_Paterno" Mode="In" Type="String" />
+      <Parameter Name="xApellido_Materno" Mode="In" Type="String" />
+      <Parameter Name="xFecha_Modificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="xAccion_Ejecutada" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_actualizar_hojaRegistro">
+      <Parameter Name="xID_HojaRegistro" Mode="In" Type="String" />
+      <Parameter Name="xSaldo_Final_Mensual" Mode="In" Type="Int32" />
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+      <Parameter Name="xArea" Mode="In" Type="String" />
+      <Parameter Name="xTurno" Mode="In" Type="String" />
+      <Parameter Name="xDia" Mode="In" Type="Int32" />
+      <Parameter Name="xMes" Mode="In" Type="Int32" />
+      <Parameter Name="xAnio" Mode="In" Type="Int32" />
+      <Parameter Name="xID_Kardex" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_actualizar_kardex">
+      <Parameter Name="xID_Kardex" Mode="In" Type="String" />
+      <Parameter Name="xSaldo_Inicial" Mode="In" Type="Decimal" />
+      <Parameter Name="xSaldo_Final" Mode="In" Type="Decimal" />
+      <Parameter Name="xMonto_Venta" Mode="In" Type="Decimal" />
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+      <Parameter Name="xGanancia" Mode="In" Type="Decimal" />
+      <Parameter Name="xDia" Mode="In" Type="Int32" />
+      <Parameter Name="xMes" Mode="In" Type="Int32" />
+      <Parameter Name="xAnio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_actualizar_producto">
+      <Parameter Name="xCodigo_Producto" Mode="In" Type="String" />
+      <Parameter Name="xNombre" Mode="In" Type="String" />
+      <Parameter Name="xDescripcion" Mode="In" Type="String" />
+      <Parameter Name="xCategoria" Mode="In" Type="String" />
+      <Parameter Name="xID_SubfamiliaProducto" Mode="In" Type="String" />
+      <Parameter Name="xDia" Mode="In" Type="Int32" />
+      <Parameter Name="xMes" Mode="In" Type="Int32" />
+      <Parameter Name="xAnio" Mode="In" Type="Int32" />
+      <Parameter Name="xPrecio" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_eliminar_empleado">
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_eliminar_hojaRegistro">
+      <Parameter Name="xID_HojaRegistro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_eliminar_kardex">
+      <Parameter Name="xID_Kardex" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_eliminar_producto">
+      <Parameter Name="xCodigo_Producto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_nuevo_empleado">
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+      <Parameter Name="xSueldo" Mode="In" Type="Decimal" />
+      <Parameter Name="xNombre_Pila" Mode="In" Type="String" />
+      <Parameter Name="xApellido_Paterno" Mode="In" Type="String" />
+      <Parameter Name="xApellido_Materno" Mode="In" Type="String" />
+      <Parameter Name="xFecha_Modificacion" Mode="In" Type="DateTime" />
+      <Parameter Name="xAccion_Ejecutada" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_nuevo_hojaRegistro">
+      <Parameter Name="xID_HojaRegistro" Mode="In" Type="String" />
+      <Parameter Name="xSaldo_Final_Mensual" Mode="In" Type="Int32" />
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+      <Parameter Name="xArea" Mode="In" Type="String" />
+      <Parameter Name="xTurno" Mode="In" Type="String" />
+      <Parameter Name="xDia" Mode="In" Type="Int32" />
+      <Parameter Name="xMes" Mode="In" Type="Int32" />
+      <Parameter Name="xAnio" Mode="In" Type="Int32" />
+      <Parameter Name="xID_Kardex" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_nuevo_kardex">
+      <Parameter Name="xID_Kardex" Mode="In" Type="String" />
+      <Parameter Name="xSaldo_Inicial" Mode="In" Type="Decimal" />
+      <Parameter Name="xSaldo_Final" Mode="In" Type="Decimal" />
+      <Parameter Name="xMonto_Venta" Mode="In" Type="Decimal" />
+      <Parameter Name="xCodigo_Empleado" Mode="In" Type="String" />
+      <Parameter Name="xGanancia" Mode="In" Type="Decimal" />
+      <Parameter Name="xDia" Mode="In" Type="Int32" />
+      <Parameter Name="xMes" Mode="In" Type="Int32" />
+      <Parameter Name="xAnio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_nuevo_producto">
+      <Parameter Name="xCodigo_Producto" Mode="In" Type="String" />
+      <Parameter Name="xNombre" Mode="In" Type="String" />
+      <Parameter Name="xDescripcion" Mode="In" Type="String" />
+      <Parameter Name="xCategoria" Mode="In" Type="String" />
+      <Parameter Name="xID_SubfamiliaProducto" Mode="In" Type="String" />
+      <Parameter Name="xDia" Mode="In" Type="Int32" />
+      <Parameter Name="xMes" Mode="In" Type="Int32" />
+      <Parameter Name="xAnio" Mode="In" Type="Int32" />
+      <Parameter Name="xPrecio" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="Consulta_Control_empleados_Result">
+    <Property Type="String" Name="Codigo_Empleado" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="15" />
+    <Property Type="Int32" Name="Cantidad_Productos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Consulta_Empleado_Sueldo_Result">
+    <Property Type="String" Name="Nombre_Pila" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="15" />
+    <Property Type="Decimal" Name="Sueldo" Nullable="false" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="Consulta_Ganancia_Result">
+    <Property Type="Decimal" Name="Saldo_Inicial" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Retiro" Nullable="false" />
+    <Property Type="Int32" Name="Entrada" Nullable="false" />
+    <Property Type="Int32" Name="Productos_Resultantes" Nullable="true" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Saldo" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Ganancia" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="consulta_monto_de_venta_Result">
+    <Property Type="String" Name="ID_Kardex" Nullable="false" MaxLength="4" />
+    <Property Type="Decimal" Name="Saldo_Inicial" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Saldo_Final" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Monto_Venta" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Dia" Nullable="false" />
+    <Property Type="Int32" Name="Mes" Nullable="false" />
+    <Property Type="Int32" Name="Anio" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Consulta_Retiro_y_Entradas_Result">
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="15" />
+    <Property Type="Int32" Name="Entrada" Nullable="false" />
+    <Property Type="Int32" Name="Retiro" Nullable="false" />
+    <Property Type="Int32" Name="Salida_de_Venta" Nullable="true" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="15" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Pérdida" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="Consulta_Saldo_Inicial_Año_Result">
+    <Property Type="Decimal" Name="Saldo_Inicial" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Monto_Venta" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Dia" Nullable="false" />
+    <Property Type="Int32" Name="Mes" Nullable="false" />
+    <Property Type="Int32" Name="Anio" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="consulta_saldos_inciales_Result">
+    <Property Type="Decimal" Name="Saldo_Inicial" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Codigo_Producto" Nullable="false" MaxLength="6" />
+  </ComplexType>
+  <ComplexType Name="Consulta_Turno_Empleados_Result">
+    <Property Type="String" Name="Codigo_Empleado" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Turno" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Codigo_En_Hoja_Registro" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Nombres_y_Apellidos" Nullable="false" MaxLength="47" />
+  </ComplexType>
+  <ComplexType Name="Empleado_en_Hoja_de_Registro_Result">
+    <Property Type="String" Name="Nombre_Pila" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Apellido_Paterno" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Turno" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Mes" Nullable="false" />
+    <Property Type="Int32" Name="Anio" Nullable="false" />
+    <Property Type="String" Name="ID_HojaRegistro" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="informacion_empleado_Result">
+    <Property Type="String" Name="Codigo_Empleado" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Nombre_Pila" Nullable="false" MaxLength="15" />
+    <Property Type="Int32" Name="Saldo_Final_Mensual" Nullable="true" />
+    <Property Type="String" Name="ID_HojaRegistro" Nullable="true" MaxLength="4" />
+  </ComplexType>
 </Schema>

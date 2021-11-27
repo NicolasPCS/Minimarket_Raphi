@@ -10,16 +10,13 @@
 namespace Minimarket_Raphi.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class HistoricoProducto
+    public partial class Consulta_Saldo_Inicial_Año_Result
     {
-        public int ID_Historico { get; set; }
-        public string ID_Producto { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public string Categoria { get; set; }
-        public decimal Precio { get; set; }
-        public System.DateTime Fecha_Eliminacion { get; set; }
+        public decimal Saldo_Inicial { get; set; }
+        public decimal Monto_Venta { get; set; }
+        public int Dia { get; set; }
+        public int Mes { get; set; }
+        public int Anio { get; set; }
     }
 }

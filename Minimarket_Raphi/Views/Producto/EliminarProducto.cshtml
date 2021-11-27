@@ -1,0 +1,62 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Producto>
+@{ ViewBag.Title = "EliminarProducto"; }
+<div class="jumbotron">
+    <h2>Eliminar un Producto</h2>
+    @using (Html.BeginForm("EliminarProducto", "Home", FormMethod.Post))
+    {
+@Html.Label("Ingrese código para borrar:")
+                @Html.TextBox("Codigo")
+                                <br>
+
+    <input type="submit" class="btn btn-success" value="Enviar">}
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo_Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Codigo_Producto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Descripcion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Categoria)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Precio)
+    </td>
+</tr>
+}
+
+
+    </table>
+</div>

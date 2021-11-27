@@ -1,0 +1,83 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Kardex>
+@{
+    ViewBag.Title = "EliminarKardex";
+}
+<div class="jumbotron">
+    <h2>Eliminar Kardex</h2>
+    @using (Html.BeginForm("EliminarEmpleado", "Home", FormMethod.Post))
+    {
+        @Html.Label("Ingrese código para borrar:")
+        @Html.TextBox("Codigo_Empleado")
+        <br>
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_Kardex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Saldo_Inicial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Saldo_Final)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Monto_Venta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ganancia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Anio)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_Kardex)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Saldo_Inicial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Saldo_Final)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Monto_Venta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ganancia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Anio)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>

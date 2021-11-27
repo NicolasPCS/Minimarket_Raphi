@@ -1,0 +1,55 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@{
+    ViewBag.Title = "NuevoProducto";
+}
+<div class="jumbotron">
+    <h2>Ingresar Nuevo Producto</h2>
+    @using (Html.BeginForm("NuevoProducto", "Home", FormMethod.Post))
+    {
+
+        <style>
+            div {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+            }
+        </style>
+
+        @Html.Label("Ingrese código:")@Html.TextBox("Codigo")
+        <br>
+        @Html.Label("Ingrese nombre:")@Html.TextBox("Nombre")
+        <br>
+        @Html.Label("Ingrese descripción:")
+        @Html.TextBox("Descripcion")
+        <br>
+        @Html.Label("Ingrese categoría:")
+        @Html.TextBox("Categoria")
+        <br>
+        @Html.Label("Ingrese subfamilia:")
+        @Html.TextBox("Subfamilia")
+        <br>
+        @Html.Label("Ingrese precio:")
+        @Html.TextBox("Precio")
+        <br>
+
+        <h6>Ingrese fecha de vencimiento:</h6>
+        @Html.Label("Ingrese día:")
+        @Html.TextBox("Dia")
+        <br>
+        @Html.Label("Ingrese mes:")
+        @Html.TextBox("Mes")
+        <br>
+        @Html.Label("Ingrese año:")
+        @Html.TextBox("Anio")
+        <br>
+
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+    }
+</div>

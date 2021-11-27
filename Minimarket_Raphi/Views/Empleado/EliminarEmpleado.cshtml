@@ -1,0 +1,54 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Empleado>
+@{
+    ViewBag.Title = "EliminarEmpleado";
+}
+<div class="jumbotron">
+    <h2>Eliminar Empleado</h2>
+    @using (Html.BeginForm("EliminarEmpleado", "Home", FormMethod.Post))
+    {
+        @Html.Label("Ingrese código para borrar:")
+        @Html.TextBox("Codigo_Empleado")
+        <br>
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sueldo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre_Pila)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido_Paterno)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sueldo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Pila)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    }
+</div>

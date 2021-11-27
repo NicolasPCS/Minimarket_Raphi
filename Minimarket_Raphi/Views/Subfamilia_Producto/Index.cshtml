@@ -3,37 +3,38 @@
 @{
     ViewBag.Title = "Administración de Subfamilias";
 }
+<div class="jumbotron">
+    <h2>Tabla Subfamilia Producto</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Agregar Nuevo", "Create", "Subfamilia_Producto/Crear")
-</p>
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Subfamilia)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <p>
+        @Html.ActionLink("Agregar Nuevo", "Create", "Subfamilia_Producto/Crear")
+    </p>
+    <table class="table table-bordered">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subfamilia)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Editar", new { id = item.Subfamilia }) |
-                @Html.ActionLink("Details", "Detalle", new { id = item.Subfamilia }) |
-                @Html.ActionLink("Delete", "Eliminar", new { id = item.Subfamilia })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subfamilia)
+            </th>
+            <th></th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subfamilia)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Editar", new { id = item.Subfamilia }) |
+                    @Html.ActionLink("Details", "Detalle", new { id = item.Subfamilia }) |
+                    @Html.ActionLink("Delete", "Eliminar", new { id = item.Subfamilia })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,16 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Minimarket Raphi</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class=" navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,15 +21,18 @@
                 </button>
                 @Html.ActionLink("Minimarket Raphi", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+            <div  class="h4 navbar-collapse collapse">
+                <ul class="h4 nav navbar-nav">
+
+                    
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>              
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("| Empleado", "Index", "Empleado/Index")</li>
                     <li>@Html.ActionLink("| Producto", "Index", "Producto/Index")</li>
                     <li>@Html.ActionLink("| Hoja de Registro", "Index", "HojaRegistro/Index")</li>
                     <li>@Html.ActionLink("| Kardex", "Index", "Kardex/Index")</li>
+                    <li>@Html.ActionLink("| Consultas", "Index", "Consulta/Index")</li>
+
                 </ul>
                 
                 @Html.Partial("_LoginPartial")
@@ -38,8 +42,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+
         <footer>
-            <p>&copy; @DateTime.Now.Year - Minimarket Raphi - Grifo Gamarra</p>
+            <div class="jumbotron">
+                <p>&copy; @DateTime.Now.Year - Minimarket Raphi - Grifo Gamarra</p>
+            </div>
         </footer>
     </div>
 

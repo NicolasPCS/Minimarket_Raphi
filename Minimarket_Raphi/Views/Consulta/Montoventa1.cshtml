@@ -1,0 +1,39 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model ObjectResult<consulta_monto_de_venta_Result>
+@{ ViewBag.Title = "Montoventa1"; }
+
+<div class="jumbotron">
+    <h2>Consultar el monto de Venta</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">ID KARDEX</th>
+                    <th scope="col">Saldo Inicial</th>
+                    <th scope="col">Saldo Final</th>
+                    <th scope="col">Monto_Venta</th>
+                    <th scope="col">Día</th>
+                    <th scope="col">Mes</th>
+                    <th scope="col">Año</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ToList())
+                {
+                    <tr>
+                        <th scope="row"></th>
+                        <td>@item.ID_Kardex</td>
+                        <td>@item.Saldo_Inicial</td>
+                        <td>@item.Saldo_Final</td>
+                        <td>@item.Monto_Venta</td>
+                        <td>@item.Dia</td>
+                        <td>@item.Mes</td>
+                        <td>@item.Anio</td>
+
+                    </tr>
+                }
+                </tbody>
+        </table>
+    
+</div>

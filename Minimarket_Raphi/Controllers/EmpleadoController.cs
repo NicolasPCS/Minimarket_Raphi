@@ -65,5 +65,79 @@ namespace Minimarket_Raphi.Controllers
             admin.Eliminar(modelo);
             return View("Index", admin.Consultar());
         }
+
+
+
+
+
+
+
+
+        public ActionResult NuevoEmpleado(string Codigo_Empleado, Nullable<decimal> Sueldo, string Nombre_Pila, string Apellido_Paterno, string Apellido_Materno, Nullable<System.DateTime> Fecha_Modificacion, string Accion_Ejecutada)
+        {
+            if (Codigo_Empleado == null)
+            {
+                return View();
+            }
+            else
+            {
+                Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                Nuevo.sp_nuevo_empleado(Codigo_Empleado, Sueldo, Nombre_Pila, Apellido_Paterno, Apellido_Materno, Fecha_Modificacion, Accion_Ejecutada);
+                Nuevo.SaveChanges();
+                return View();
+            }
+        }
+        public ActionResult ActualizarEmpleado(string Codigo_Empleado, Nullable<decimal> Sueldo, string Nombre_Pila, string Apellido_Paterno, string Apellido_Materno, Nullable<System.DateTime> Fecha_Modificacion, string Accion_Ejecutada)
+        {
+            if (Codigo_Empleado == null)
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    return View(contexto.Empleado.AsNoTracking().ToList());
+                }
+            }
+            else
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                    Nuevo.sp_actualizar_empleado(Codigo_Empleado, Sueldo, Nombre_Pila, Apellido_Paterno, Apellido_Materno, Fecha_Modificacion, Accion_Ejecutada);
+                    Nuevo.SaveChanges();
+                    return View(contexto.Empleado.AsNoTracking().ToList());
+                }
+            }
+
+        }
+        public ActionResult EliminarEmpleado(string Codigo_Empleado)
+        {
+            if (Codigo_Empleado == null)
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    return View(contexto.Empleado.AsNoTracking().ToList());
+                }
+            }
+            else
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+
+                    Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                    Nuevo.sp_eliminar_empleado(Codigo_Empleado);
+                    Nuevo.SaveChanges();
+                    return View(contexto.Empleado.AsNoTracking().ToList());
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

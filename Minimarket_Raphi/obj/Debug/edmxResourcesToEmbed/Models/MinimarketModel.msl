@@ -22,19 +22,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="HistoricoProducto">
-      <EntityTypeMapping TypeName="Minimarket_RaphiModel.HistoricoProducto">
-        <MappingFragment StoreEntitySet="HistoricoProducto">
-          <ScalarProperty Name="ID_Historico" ColumnName="ID_Historico" />
-          <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
-          <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="Fecha_Eliminacion" ColumnName="Fecha_Eliminacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Hoja_de_Registro">
       <EntityTypeMapping TypeName="Minimarket_RaphiModel.Hoja_de_Registro">
         <MappingFragment StoreEntitySet="Hoja_de_Registro">
@@ -133,5 +120,126 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Consulta_Control_empleados" FunctionName="Minimarket_RaphiModel.Store.Consulta_Control_empleados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Consulta_Control_empleados_Result">
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo Empleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido Paterno" />
+          <ScalarProperty Name="Cantidad_Productos" ColumnName="Cantidad Productos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Consulta_Empleado_Sueldo" FunctionName="Minimarket_RaphiModel.Store.Consulta_Empleado_Sueldo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Consulta_Empleado_Sueldo_Result">
+          <ScalarProperty Name="Nombre_Pila" ColumnName="Nombre_Pila" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Consulta_Ganancia" FunctionName="Minimarket_RaphiModel.Store.Consulta_Ganancia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Consulta_Ganancia_Result">
+          <ScalarProperty Name="Saldo_Inicial" ColumnName="Saldo_Inicial" />
+          <ScalarProperty Name="Retiro" ColumnName="Retiro" />
+          <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+          <ScalarProperty Name="Productos_Resultantes" ColumnName="Productos_Resultantes" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Ganancia" ColumnName="Ganancia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="consulta_monto_de_venta" FunctionName="Minimarket_RaphiModel.Store.consulta_monto_de_venta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.consulta_monto_de_venta_Result">
+          <ScalarProperty Name="ID_Kardex" ColumnName="ID_Kardex" />
+          <ScalarProperty Name="Saldo_Inicial" ColumnName="Saldo_Inicial" />
+          <ScalarProperty Name="Saldo_Final" ColumnName="Saldo_Final" />
+          <ScalarProperty Name="Monto_Venta" ColumnName="Monto_Venta" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Consulta_Retiro_y_Entradas" FunctionName="Minimarket_RaphiModel.Store.Consulta_Retiro_y_Entradas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Consulta_Retiro_y_Entradas_Result">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+          <ScalarProperty Name="Retiro" ColumnName="Retiro" />
+          <ScalarProperty Name="Salida_de_Venta" ColumnName="Salida_de_Venta" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Pérdida" ColumnName="Pérdida" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Consulta_Saldo_Inicial_Año" FunctionName="Minimarket_RaphiModel.Store.Consulta_Saldo_Inicial_Año">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Consulta_Saldo_Inicial_Año_Result">
+          <ScalarProperty Name="Saldo_Inicial" ColumnName="Saldo_Inicial" />
+          <ScalarProperty Name="Monto_Venta" ColumnName="Monto_Venta" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="consulta_saldos_inciales" FunctionName="Minimarket_RaphiModel.Store.consulta_saldos_inciales">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.consulta_saldos_inciales_Result">
+          <ScalarProperty Name="Saldo_Inicial" ColumnName="Saldo_Inicial" />
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Consulta_Turno_Empleados" FunctionName="Minimarket_RaphiModel.Store.Consulta_Turno_Empleados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Consulta_Turno_Empleados_Result">
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Codigo_En_Hoja_Registro" ColumnName="Codigo_En_Hoja_Registro" />
+          <ScalarProperty Name="Nombres_y_Apellidos" ColumnName="Nombres_y_Apellidos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Empleado_en_Hoja_de_Registro" FunctionName="Minimarket_RaphiModel.Store.Empleado_en_Hoja_de_Registro">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.Empleado_en_Hoja_de_Registro_Result">
+          <ScalarProperty Name="Nombre_Pila" ColumnName="Nombre_Pila" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+          <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="informacion_empleado" FunctionName="Minimarket_RaphiModel.Store.informacion_empleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Minimarket_RaphiModel.informacion_empleado_Result">
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="Nombre_Pila" ColumnName="Nombre_Pila" />
+          <ScalarProperty Name="Saldo_Final_Mensual" ColumnName="Saldo_Final_Mensual" />
+          <ScalarProperty Name="ID_HojaRegistro" ColumnName="ID_HojaRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_actualizar_empleado" FunctionName="Minimarket_RaphiModel.Store.sp_actualizar_empleado" />
+    <FunctionImportMapping FunctionImportName="sp_actualizar_hojaRegistro" FunctionName="Minimarket_RaphiModel.Store.sp_actualizar_hojaRegistro" />
+    <FunctionImportMapping FunctionImportName="sp_actualizar_kardex" FunctionName="Minimarket_RaphiModel.Store.sp_actualizar_kardex" />
+    <FunctionImportMapping FunctionImportName="sp_actualizar_producto" FunctionName="Minimarket_RaphiModel.Store.sp_actualizar_producto" />
+    <FunctionImportMapping FunctionImportName="sp_eliminar_empleado" FunctionName="Minimarket_RaphiModel.Store.sp_eliminar_empleado" />
+    <FunctionImportMapping FunctionImportName="sp_eliminar_hojaRegistro" FunctionName="Minimarket_RaphiModel.Store.sp_eliminar_hojaRegistro" />
+    <FunctionImportMapping FunctionImportName="sp_eliminar_kardex" FunctionName="Minimarket_RaphiModel.Store.sp_eliminar_kardex" />
+    <FunctionImportMapping FunctionImportName="sp_eliminar_producto" FunctionName="Minimarket_RaphiModel.Store.sp_eliminar_producto" />
+    <FunctionImportMapping FunctionImportName="sp_nuevo_empleado" FunctionName="Minimarket_RaphiModel.Store.sp_nuevo_empleado" />
+    <FunctionImportMapping FunctionImportName="sp_nuevo_hojaRegistro" FunctionName="Minimarket_RaphiModel.Store.sp_nuevo_hojaRegistro" />
+    <FunctionImportMapping FunctionImportName="sp_nuevo_kardex" FunctionName="Minimarket_RaphiModel.Store.sp_nuevo_kardex" />
+    <FunctionImportMapping FunctionImportName="sp_nuevo_producto" FunctionName="Minimarket_RaphiModel.Store.sp_nuevo_producto" />
   </EntityContainerMapping>
 </Mapping>

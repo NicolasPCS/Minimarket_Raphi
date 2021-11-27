@@ -1,0 +1,55 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model IEnumerable<Minimarket_Raphi.Models.Kardex>
+@{
+    ViewBag.Title = "NuevoKardex";
+}
+<div class="jumbotron">
+    <h2>Nuevo Kardex</h2>
+    @using (Html.BeginForm("NuevoKardex", "Home", FormMethod.Post))
+    {
+        <style>
+            div {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+            }
+        </style>
+
+        @Html.Label("Ingrese ID Kardex:")
+        @Html.TextBox("ID_Kardex")
+        <br>
+        @Html.Label("Ingrese Saldo Inicial:")
+        @Html.TextBox("Saldo_Inicial")
+        <br>
+        @Html.Label("Ingrese Saldo Final:")
+        @Html.TextBox("Saldo_Final")
+        <br>
+        @Html.Label("Ingrese Monto Venta:")
+        @Html.TextBox("Monto_Venta")
+        <br>
+        @Html.Label("Ingrese Código Empleado:")
+        @Html.TextBox("Codigo_Empleado")
+        <br>
+        @Html.Label("Ingrese Ganancia")
+        @Html.TextBox("Ganancia")
+        <br>
+        @Html.Label("Ingrese Día:")
+        @Html.TextBox("Dia")
+        <br>
+        @Html.Label("Ingrese Mes:")
+        @Html.TextBox("Mes")
+        <br>
+        @Html.Label("Ingrese Año:")
+        @Html.TextBox("Anio")
+        <br>
+
+
+        <input type="submit" class="btn btn-success" value="Enviar">
+
+    }
+</div>

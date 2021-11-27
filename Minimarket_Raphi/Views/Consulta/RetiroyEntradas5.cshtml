@@ -1,0 +1,40 @@
+﻿    @using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model ObjectResult<Consulta_Retiro_y_Entradas_Result>
+@{
+    ViewBag.Title = "RetiroyEntradas5";
+}
+
+
+<div class="jumbotron">
+    <h2>Entradas y Salidas de Productos</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Entrada</th>
+                <th scope="col">Retiro</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Pérdida</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ToList())
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>@item.Nombre</td>
+                    <td>@item.Entrada</td>
+                    <td>@item.Retiro</td>
+                    <td>@item.Categoria</td>
+                    <td>@item.Precio</td>
+                    <td>@item.Pérdida</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

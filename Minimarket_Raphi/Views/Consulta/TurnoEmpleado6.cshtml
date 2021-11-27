@@ -1,0 +1,37 @@
+﻿@using Minimarket_Raphi.Models
+@using System.Data.Entity.Core.Objects;
+@model ObjectResult<Consulta_Turno_Empleados_Result>
+@{
+    ViewBag.Title = "TurnoEmpleado6";
+}
+
+
+<div class="jumbotron">
+    <h2>Consultar el turno de empleados</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Código Empleado</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Código en hoja de Registro</th>
+                <th scope="col">Nombres y Apellidos</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ToList())
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>@item.Codigo_Empleado</td>
+                    <td>@item.Turno</td>
+                    <td>@item.Codigo_En_Hoja_Registro</td>
+                    <td>@item.Nombres_y_Apellidos</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

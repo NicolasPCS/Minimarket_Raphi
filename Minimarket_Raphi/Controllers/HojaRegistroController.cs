@@ -66,5 +66,79 @@ namespace Minimarket_Raphi.Controllers
             admin.Eliminar(modelo);
             return View("Index", admin.Consultar());
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        public ActionResult NuevaHoja_de_Registro(string ID_HojaRegistro, Nullable<int> Saldo_Final_Mensual, string Codigo_Empleado, string Area, string Turno, Nullable<int> Dia, Nullable<int> Mes, Nullable<int> Anio, string ID_Kardex)
+        {
+            if (Codigo_Empleado == null)
+            {
+                return View();
+            }
+            else
+            {
+                Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                Nuevo.sp_nuevo_hojaRegistro(ID_HojaRegistro, Saldo_Final_Mensual, Codigo_Empleado, Area, Turno, Dia, Mes, Anio, ID_Kardex);
+                Nuevo.SaveChanges();
+                return View();
+            }
+        }
+        public ActionResult ActualizarHoja_de_Registro(string ID_HojaRegistro, Nullable<int> Saldo_Final_Mensual, string Codigo_Empleado, string Area, string Turno, Nullable<int> Dia, Nullable<int> Mes, Nullable<int> Anio, string ID_Kardex)
+        {
+            if (Codigo_Empleado == null)
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    return View(contexto.Hoja_de_Registro.AsNoTracking().ToList());
+                }
+            }
+            else
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                    Nuevo.sp_actualizar_hojaRegistro(ID_HojaRegistro, Saldo_Final_Mensual, Codigo_Empleado, Area, Turno, Dia, Mes, Anio, ID_Kardex);
+                    Nuevo.SaveChanges();
+                    return View(contexto.Hoja_de_Registro.AsNoTracking().ToList());
+                }
+            }
+
+        }
+        public ActionResult EliminarHoja_de_Registro(string Codigo_Hoja_de_Registro)
+        {
+            if (Codigo_Hoja_de_Registro == null)
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+                    return View(contexto.Hoja_de_Registro.AsNoTracking().ToList());
+                }
+            }
+            else
+            {
+                using (Minimarket_RaphiEntities contexto = new Minimarket_RaphiEntities())
+                {
+
+                    Minimarket_RaphiEntities Nuevo = new Minimarket_RaphiEntities();
+                    Nuevo.sp_eliminar_hojaRegistro(Codigo_Hoja_de_Registro);
+                    Nuevo.SaveChanges();
+                    return View(contexto.Hoja_de_Registro.AsNoTracking().ToList());
+                }
+            }
+        }
+
+
+
+
+
+
     }
 }
